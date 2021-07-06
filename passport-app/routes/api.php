@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// To use Personal Access Token
 Route::post('/login', function (Request $request) {
     $user = User::where('email', $request->email)->first();
     if ($user) {
